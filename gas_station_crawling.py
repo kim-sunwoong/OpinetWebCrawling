@@ -166,6 +166,11 @@ gas_station['Die'] = gas_station['Die'].str.replace(',','')
 # Only unique stations
 gas_station = gas_station.drop_duplicates(subset=["Gas_Station"])
 
+df['Pre'] = df['Pre'].fillna(0).astype(int)
+df['Reg'] = df['Reg'].fillna(0).astype(int)
+df['Die'] = df['Die'].fillna(0).astype(int)
+df['Ker'] = df['Ker'].fillna(0).astype(int)
+
 # Save
 path = '/home/sunnypc/dev_ws/eda/data'
 time = str(strftime("%Y-%m-%d", gmtime()))
