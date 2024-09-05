@@ -15,9 +15,8 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-
 from bs4 import BeautifulSoup
-
+from time import gmtime, strftime
 
 driver = webdriver.Chrome(service = Service("/home/sunnypc/dev_ws/driver/chromedriver"))
 url = 'https://www.opinet.co.kr/searRgSelect.do'
@@ -169,7 +168,8 @@ gas_station = gas_station.drop_duplicates(subset=["Gas_Station"])
 
 # Save
 path = '/home/sunnypc/dev_ws/eda/data'
-gas_station.to_csv(f'{path}/GasStation.csv')
+time = str(strftime("%Y-%m-%d", gmtime()))
+gas_station.to_csv(f'{path}/GasStation_{time}.csv')gas_station.to_csv(f'{path}/GasStation.csv')
 
                 
                 
