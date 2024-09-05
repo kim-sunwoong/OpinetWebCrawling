@@ -18,7 +18,8 @@ from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 from time import gmtime, strftime
 
-driver = webdriver.Chrome(service = Service("/home/sunnypc/dev_ws/driver/chromedriver"))
+driver_path = "/home/sunnypc/dev_ws/driver/chromedriver"
+driver = webdriver.Chrome(service = Service(driver_path))
 url = 'https://www.opinet.co.kr/searRgSelect.do'
 driver.get(url)
 
