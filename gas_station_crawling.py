@@ -172,6 +172,15 @@ df['Reg'] = df['Reg'].fillna(0).astype(int)
 df['Die'] = df['Die'].fillna(0).astype(int)
 df['Ker'] = df['Ker'].fillna(0).astype(int)
 
+# df.drop(columns='Unnamed: 0.1',inplace=True)
+# df.drop(columns='Unnamed: 0', inplace=True)
+
+# df.reset_index(inplace=True)
+# df.rename(columns={'index' : 'ID'}, inplace=True)
+# df["ID"] = df['ID']+1
+
+df.to_csv('/home/sunnypc/dev_ws/eda/data/GasStation_2024-09-05.csv')
+
 # Save
 path = '/home/sunnypc/dev_ws/eda/data'
 time = str(strftime("%Y-%m-%d", gmtime()))
